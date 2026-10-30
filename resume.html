@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ── SEO & Meta ── -->
+  <title>Official Resume — Uday Kumbhar | Final-Year B.Tech CSE</title>
+  <meta name="description" content="View or download the official resume of Uday Kumbhar, Final-Year B.Tech Computer Science and Engineering student at Bhaskar Engineering College.">
+  <meta name="author" content="Uday Kumbhar">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Official Resume — Uday Kumbhar">
+  <meta property="og:description" content="View or download the official resume of Uday Kumbhar.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/profile-hero.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/favicon.png">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Base & Resume Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/resume.css">
+
+  <!-- Anti-FOUC: Apply saved theme before paint -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('portfolio-theme');
+      if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
+</head>
+<body class="resume-page">
+
+  <!-- Atmosphere Orbs -->
+  <div class="resume-bg-decor">
+    <div class="resume-orb resume-orb--1"></div>
+    <div class="resume-orb resume-orb--2"></div>
+  </div>
+
+  <!-- ============================
+       NAVIGATION
+       ============================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="container">
+      <a href="index.html#home" class="nav-logo" aria-label="Go to home">
+        <span class="nav-logo-icon" id="logo-icon">UK</span>
+        <span id="logo-text">Uday Kumbhar</span>
+      </a>
+
+      <div class="nav-links" id="nav-links" role="menubar">
+        <a href="index.html#home" class="nav-link" role="menuitem">Home</a>
+        <a href="index.html#about" class="nav-link" role="menuitem">About</a>
+        <a href="index.html#education" class="nav-link" role="menuitem">Education</a>
+        <a href="index.html#skills" class="nav-link" role="menuitem">Skills</a>
+        <a href="index.html#projects" class="nav-link" role="menuitem">Projects</a>
+        <a href="index.html#certifications" class="nav-link" role="menuitem">Certifications</a>
+        <a href="index.html#achievements" class="nav-link" role="menuitem">Achievements</a>
+        <a href="index.html#contact" class="nav-link" role="menuitem">Contact</a>
+        <a href="resume.html" class="nav-link active" role="menuitem"><i class="fa-solid fa-file-lines"></i> Resume</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" title="Toggle Dark Mode" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-moon icon-moon"></i>
+          <i class="fa-solid fa-sun icon-sun"></i>
+        </button>
+        <a href="assets/resume/my-resume.pdf" download="Uday-Kumbhar-Resume.pdf" class="nav-cta">
+          <i class="fa-solid fa-download"></i> Download PDF
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================
+       RESUME VIEWER SECTION
+       ============================ -->
+  <main class="resume-section">
+    <div class="resume-container">
+
+      <!-- Header -->
+      <div class="resume-header">
+        <div class="resume-badge">
+          <i class="fa-solid fa-file-pdf"></i> Curriculum Vitae
+        </div>
+        <h1>My Resume</h1>
+        <p>View or download my resume directly below, or expand into fullscreen mode for a detailed read.</p>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="resume-toolbar" role="toolbar" aria-label="Resume Document Controls">
+        <div class="resume-toolbar-left">
+          <a href="index.html" class="btn-tool btn-tool--back" title="Return to Portfolio">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Back to Portfolio</span>
+          </a>
+          <span class="resume-doc-tag" title="Document identifier">
+            <i class="fa-solid fa-file-pdf"></i> my-resume.pdf
+          </span>
+        </div>
+
+        <div class="resume-toolbar-right">
+          <!-- Fullscreen button -->
+          <button id="btn-fullscreen" class="btn-tool" type="button" title="View Fullscreen">
+            <i class="fa-solid fa-expand"></i>
+            <span>Full Screen</span>
+          </button>
+
+          <!-- Open in new tab -->
+          <a id="btn-open-tab" href="assets/resume/my-resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-tool" title="Open PDF in new tab">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>Open in New Tab</span>
+          </a>
+
+          <!-- Download button -->
+          <a id="btn-download" href="assets/resume/my-resume.pdf" download="Uday-Kumbhar-Resume.pdf" class="btn-tool btn-tool--primary" title="Download Resume PDF">
+            <i class="fa-solid fa-download"></i>
+            <span>Download PDF</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- PDF Viewer Frame -->
+      <div class="resume-viewer-container" id="resume-viewer-container">
+        <!-- Floating Exit Fullscreen Button -->
+        <button id="btn-exit-fullscreen" class="fullscreen-exit-btn" type="button" title="Exit Fullscreen Mode">
+          <i class="fa-solid fa-compress"></i> Exit Full Screen
+        </button>
+
+        <!-- Embedded PDF Object with nested fallback -->
+        <object id="resume-object"
+                data="assets/resume/my-resume.pdf#toolbar=1&navpanes=0"
+                type="application/pdf"
+                class="resume-pdf-frame">
+          <!-- Fallback iframe for browsers with iframe PDF support -->
+          <iframe src="assets/resume/my-resume.pdf"
+                  class="resume-pdf-frame"
+                  title="Resume PDF Viewer">
+            <!-- Graceful Fallback Card when browser does not embed PDF -->
+            <div class="resume-fallback-card" id="resume-fallback">
+              <div class="resume-fallback-icon">
+                <i class="fa-solid fa-file-pdf"></i>
+              </div>
+              <h3>Resume Document Ready</h3>
+              <p>Your browser doesn't support embedded PDF preview, or mobile security prevents direct framing. You can open the document in a new tab or download it directly.</p>
+              <div class="resume-fallback-actions">
+                <a href="assets/resume/my-resume.pdf" download="Uday-Kumbhar-Resume.pdf" class="btn btn--primary">
+                  <i class="fa-solid fa-download"></i> Download Resume PDF
+                </a>
+                <a href="assets/resume/my-resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in New Tab
+                </a>
+              </div>
+            </div>
+          </iframe>
+        </object>
+      </div>
+
+      <!-- Quick note for user -->
+      <div class="resume-info-card">
+        <div class="resume-info-left">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>To update this document, replace <code>assets/resume/my-resume.pdf</code> with your latest PDF file.</span>
+        </div>
+        <div>
+          <a href="assets/resume/my-resume.pdf" download="Uday-Kumbhar-Resume.pdf" class="social-link" title="Direct Download" style="width: auto; height: auto; padding: 6px 14px; gap: 6px; font-size: 0.82rem;">
+            <i class="fa-solid fa-download"></i> Direct Download
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============================
+       FOOTER
+       ============================ -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo"><span class="footer-logo-icon">UK</span> Uday Kumbhar</span>
+          <p class="footer-tagline">Final-Year B.Tech CSE Student & Software Developer • Bhaskar Engineering College</p>
+        </div>
+        <div class="footer-nav">
+          <a href="index.html#home" class="footer-link">Home</a>
+          <a href="index.html#about" class="footer-link">About</a>
+          <a href="index.html#education" class="footer-link">Education</a>
+          <a href="index.html#skills" class="footer-link">Skills</a>
+          <a href="index.html#projects" class="footer-link">Projects</a>
+          <a href="resume.html" class="footer-link">Resume</a>
+          <a href="index.html#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-text">
+          © 2026 Uday Kumbhar. Built with <span class="footer-heart">♥</span> and code.
+        </p>
+        <div class="footer-socials">
+          <a href="https://github.com/udaykumbhar" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com/in/uday-kumbhar-b485a2361" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Resume JS -->
+  <script src="js/resume.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="200" fill="url(#bg)"/>
+  <rect width="400" height="400" rx="200" fill="url(#shine)"/>
+  <!-- Head -->
+  <circle cx="200" cy="150" r="65" fill="rgba(255,255,255,0.25)"/>
+  <!-- Body -->
+  <ellipse cx="200" cy="340" rx="95" ry="90" fill="rgba(255,255,255,0.25)"/>
+  <!-- Plus icon hint -->
+  <line x1="200" y1="270" x2="200" y2="310" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-linecap="round"/>
+  <line x1="180" y1="290" x2="220" y2="290" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-linecap="round"/>
+  <!-- Text -->
+  <text x="200" y="375" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-family="Arial, sans-serif" font-size="13" font-weight="600">ADD YOUR PHOTO</text>
+</svg>

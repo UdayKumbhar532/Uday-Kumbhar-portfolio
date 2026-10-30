@@ -1,0 +1,18 @@
+# System & OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment Secrets
+.env
+.env.local
+*.log
+
+# Editor & IDE
+.vscode/
+.idea/
+
+# Scratch & temporary testing files
+scratch/
+test-*.js
+check-*.js

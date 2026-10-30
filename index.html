@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ── SEO & Meta ── -->
+  <title>Uday Kumbhar | AI-Augmented Software Developer</title>
+  <meta name="description" content="Personal portfolio of Uday Kumbhar, Final-Year B.Tech Computer Science and Engineering student showcasing projects, skills, certifications, and AI-augmented software development workflows.">
+  <meta name="keywords" content="portfolio, developer, computer science, web development, projects, Uday Kumbhar, Django, AI">
+  <meta name="author" content="Uday Kumbhar">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Uday Kumbhar — Developer Portfolio">
+  <meta property="og:description" content="Personal portfolio of Uday Kumbhar, Final-Year B.Tech Computer Science and Engineering student.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/profile-hero.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/favicon.png">
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Anti-FOUC: Apply saved theme before paint -->
+  <script>
+    (function() {
+      var t = localStorage.getItem('portfolio-theme');
+      if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ============================
+       PAGE LOADER
+       ============================ -->
+  <div class="page-loader" id="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+  <script>
+    // Fail-safe preloader guard: guarantees loader is removed even if external resources stall
+    (function() {
+      var loader = document.getElementById('page-loader');
+      if (!loader) return;
+      function hideLoader() {
+        if (!loader || !loader.parentNode) return;
+        loader.classList.add('fade-out');
+        setTimeout(function() {
+          if (loader && loader.parentNode) {
+            loader.style.display = 'none';
+            loader.parentNode.removeChild(loader);
+          }
+        }, 350);
+      }
+      window.addEventListener('load', hideLoader, { once: true });
+      setTimeout(hideLoader, 1200);
+    })();
+  </script>
+
+  <!-- ============================
+       NAVIGATION — FLOATING GLASSMORPHISM SYSTEM
+       ============================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-container">
+      <!-- Left: Logo & Subtitle -->
+      <a href="#home" class="nav-logo" aria-label="Go to home">
+        <span class="nav-logo-icon" id="logo-icon">UK</span>
+        <div class="nav-logo-meta">
+          <span class="nav-logo-name" id="logo-text">UDAY KUMBHAR</span>
+          <span class="nav-logo-subtitle">AI-AUGMENTED DEVELOPER</span>
+        </div>
+      </a>
+
+      <!-- Center: Navigation Links -->
+      <div class="nav-links" id="nav-links" role="menubar">
+        <a href="#home" class="nav-link active" role="menuitem">Home</a>
+        <a href="#about" class="nav-link" role="menuitem">About</a>
+        <a href="#skills" class="nav-link" role="menuitem">Skills</a>
+        <a href="#projects" class="nav-link" role="menuitem">Projects</a>
+        <a href="#education" class="nav-link" role="menuitem">Education</a>
+        <a href="#certifications" class="nav-link" role="menuitem">Certifications</a>
+        <a href="#contact" class="nav-link" role="menuitem">Contact</a>
+      </div>
+
+      <!-- Right: Actions & Theme Toggle -->
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" title="Toggle Dark Mode" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-moon icon-moon"></i>
+          <i class="fa-solid fa-sun icon-sun"></i>
+        </button>
+
+        <a href="assets/resume/my-resume.pdf" download="Uday-Kumbhar-Resume.pdf" class="nav-resume-btn resume-download-btn" title="Download Resume PDF">
+          <i class="fa-solid fa-download"></i>
+          <span>Resume</span>
+        </a>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================
+       HERO SECTION — AI-AUGMENTED DEVELOPER
+       ============================ -->
+  <section class="hero section" id="home">
+    <!-- Atmospheric Background Effects -->
+    <div class="hero-bg-decor" aria-hidden="true">
+      <div class="hero-orb hero-orb--1"></div>
+      <div class="hero-orb hero-orb--2"></div>
+      <div class="hero-orb hero-orb--3"></div>
+      <span class="hero-code-float">&lt;AI.augmented development="active" /&gt;</span>
+      <span class="hero-code-float">const passion = "MachineLearning" &amp;&amp; "Web";</span>
+      <span class="hero-code-float">async function buildIntelligentSolutions() {}</span>
+      <span class="hero-code-float">// turning ideas into reality</span>
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="container hero-container">
+      <!-- Left Column: Hero Content & Identity -->
+      <div class="hero-content">
+        <!-- Live Opportunity Badge -->
+        <div class="hero-badge reveal">
+          <span class="badge-pulse-dot" aria-hidden="true"></span>
+          <span class="hero-badge-text">Open to Internships &amp; Fresher Opportunities</span>
+        </div>
+
+        <p class="hero-greeting reveal reveal-delay-1" id="hero-greeting">HELLO, WORLD! I'M</p>
+
+        <h1 class="hero-name reveal reveal-delay-1">
+          <span class="name-highlight" id="hero-name">Uday Kumbhar</span>
+        </h1>
+
+        <!-- Headlines & Animated Designation -->
+        <div class="hero-headlines reveal reveal-delay-2">
+          <h2 class="hero-main-headline">Final-Year Computer Science Engineering Student</h2>
+          
+          <div class="hero-title" aria-label="Professional Roles">
+            <span class="hero-title-prefix"><i class="fa-solid fa-terminal"></i></span>
+            <span id="hero-title-text" class="rotating-text">AI Enthusiast</span>
+            <span class="typing-cursor" aria-hidden="true"></span>
+          </div>
+
+          <p class="hero-subheadline">Exploring AI. Building Intelligent Solutions. Turning Ideas Into Reality.</p>
+        </div>
+
+        <!-- Bio Description -->
+        <p class="hero-description reveal reveal-delay-2" id="hero-description">
+          I'm a final-year B.Tech Computer Science Engineering student with a strong interest in Artificial Intelligence, Generative AI, and modern software development. I enjoy exploring emerging technologies, experimenting with AI-powered tools, and building practical projects that solve real-world problems. I'm continuously learning, creating, and preparing to turn my technical knowledge into meaningful solutions.
+        </p>
+
+        <!-- Call-to-Action Buttons -->
+        <div class="hero-actions reveal reveal-delay-3">
+          <a href="#projects" class="btn btn--primary">
+            <i class="fa-solid fa-rocket"></i> Explore My Projects
+          </a>
+          <a href="assets/resume/my-resume.pdf" download="Uday-Kumbhar-Resume.pdf" class="btn btn--outline resume-download-btn">
+            <i class="fa-solid fa-download"></i> Download Resume
+          </a>
+        </div>
+
+        <!-- Social Connections -->
+        <div class="hero-socials reveal reveal-delay-4">
+          <span class="hero-socials-label">Connect with me:</span>
+          <a href="https://github.com/udaykumbhar" target="_blank" rel="noopener" class="social-link" id="social-github" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/uday-kumbhar-b485a2361" target="_blank" rel="noopener" class="social-link" id="social-linkedin" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:udayraje.1981@gmail.com" class="social-link" id="social-email" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+
+        <!-- Technology Highlights Strip -->
+        <div class="hero-tech-strip reveal reveal-delay-4">
+          <span class="tech-strip-label"><i class="fa-solid fa-layer-group"></i> Core Stack:</span>
+          <div class="tech-strip-items">
+            <span class="tech-chip"><i class="fa-brands fa-python"></i> Python</span>
+            <span class="tech-chip"><i class="fa-brands fa-java"></i> Java</span>
+            <span class="tech-chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+            <span class="tech-chip"><i class="fa-brands fa-react"></i> React</span>
+            <span class="tech-chip"><i class="fa-brands fa-html5"></i> HTML</span>
+            <span class="tech-chip"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+            <span class="tech-chip"><i class="fa-brands fa-node-js"></i> Node.js</span>
+            <span class="tech-chip"><i class="fa-solid fa-database"></i> MongoDB</span>
+            <span class="tech-chip tech-chip--ai"><i class="fa-solid fa-wand-magic-sparkles"></i> Generative AI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Visual Portrait Presentation -->
+      <div class="hero-visual reveal">
+        <div class="hero-cutout-wrapper">
+          <!-- Ambient Radial Purple/Indigo Backlight Glow -->
+          <div class="hero-cutout-glow"></div>
+
+          <!-- Futuristic Concentric Geometric Rings -->
+          <div class="hero-cutout-ring hero-cutout-ring--1"></div>
+          <div class="hero-cutout-ring hero-cutout-ring--2"></div>
+          <div class="hero-cutout-ring hero-cutout-ring--3"></div>
+          <svg class="hero-cutout-curve" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M 50,250 A 200,200 0 0,1 450,250" stroke="url(#cutoutGrad)" stroke-width="1.5" stroke-dasharray="6 8" opacity="0.6"/>
+            <defs>
+              <linearGradient id="cutoutGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#a855f7" stop-opacity="0.8"/>
+                <stop offset="50%" stop-color="#6366f1" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <!-- Floating Technology Badges -->
+          <div class="hero-float-icon hero-float-icon--js" title="JavaScript"><i class="fa-brands fa-js"></i></div>
+          <div class="hero-float-icon hero-float-icon--react" title="React"><i class="fa-brands fa-react"></i></div>
+          <div class="hero-float-icon hero-float-icon--python" title="Python"><i class="fa-brands fa-python"></i></div>
+          <div class="hero-float-icon hero-float-icon--ai" title="Artificial Intelligence"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+
+          <!-- Floating Identity Glass Tag -->
+          <div class="hero-status-pill">
+            <span class="pill-dot"></span>
+            <span>AI-Augmented Engineering</span>
+          </div>
+
+          <!-- High-Resolution Portrait Cutout Image -->
+          <div class="hero-cutout-container">
+            <img src="assets/images/profile-hero.png"
+                 alt="Uday Kumbhar — Profile Photograph"
+                 id="hero-profile-img"
+                 class="hero-cutout-img">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Scroll Indicator -->
+    <a href="#about" class="hero-scroll-indicator reveal reveal-delay-4" aria-label="Scroll to About section">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span class="scroll-text">Scroll to explore</span>
+    </a>
+  </section>
+
+  <!-- ============================
+       ABOUT SECTION
+       ============================ -->
+  <section class="section section--light" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge section-badge--light"><i class="fa-solid fa-user"></i> Introduction</span>
+        <h2 class="section-title">Get To Know <span class="highlight" id="about-title">About Me</span></h2>
+        <p class="section-subtitle">Learn more about my background, interests, and what drives me as a developer.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h3>Who I Am</h3>
+          <p id="about-description">
+            I'm a dedicated Computer Science Engineering student with a strong foundation in programming
+            and a passion for building real-world applications. I enjoy solving complex problems, learning
+            new technologies, and collaborating on meaningful projects.
+          </p>
+          <p>
+            My journey in tech started with curiosity about how software works, and since then I've been
+            continuously learning and building. I believe in writing clean, maintainable code and creating
+            user experiences that make a difference.
+          </p>
+
+          <h3 style="margin-top: 24px;">Areas of Interest</h3>
+          <div class="about-interests" id="about-interests">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <div class="about-stats" id="about-stats">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       EDUCATION SECTION
+       ============================ -->
+  <section class="section section--soft" id="education">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge"><i class="fa-solid fa-graduation-cap"></i> Education</span>
+        <h2 class="section-title">My <span class="highlight">Academic Journey</span></h2>
+        <p class="section-subtitle">A timeline of my educational background and academic milestones.</p>
+      </div>
+
+      <div class="education-timeline" id="education-timeline">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       SKILLS SECTION
+       ============================ -->
+  <section class="section section--light" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge section-badge--light"><i class="fa-solid fa-code"></i> Skills</span>
+        <h2 class="section-title">Technical <span class="highlight">Skill Set</span></h2>
+        <p class="section-subtitle">Technologies and tools I've learned and worked with.</p>
+      </div>
+
+      <div class="skills-categories reveal" id="skill-filters">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="skills-grid" id="skills-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       PROJECTS SECTION
+       ============================ -->
+  <section class="section section--soft" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge"><i class="fa-solid fa-diagram-project"></i> Projects</span>
+        <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+        <p class="section-subtitle">A showcase of projects I've built to apply and expand my skills.</p>
+      </div>
+
+      <div class="project-filters reveal" id="project-filters">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       CERTIFICATIONS SECTION
+       ============================ -->
+  <section class="section section--light" id="certifications">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge section-badge--light"><i class="fa-solid fa-award"></i> Certifications</span>
+        <h2 class="section-title">My <span class="highlight">Certifications</span></h2>
+        <p class="section-subtitle">Certificates and achievements from my learning journey.</p>
+      </div>
+
+      <div class="certs-grid" id="certs-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       ACHIEVEMENTS SECTION
+       ============================ -->
+  <section class="section section--soft" id="achievements" data-section="achievements-section">
+    <div id="achievements-section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fa-solid fa-trophy"></i> Achievements</span>
+          <h2 class="section-title">Achievements & <span class="highlight">Experience</span></h2>
+          <p class="section-subtitle">Highlights from competitions, events, and extracurricular activities.</p>
+        </div>
+
+        <div class="achievements-grid" id="achievements-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       LEARNING JOURNEY SECTION
+       ============================ -->
+  <section class="section section--light" id="journey">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge section-badge--light"><i class="fa-solid fa-compass"></i> What's Next</span>
+        <h2 class="section-title">My Learning <span class="highlight">Journey</span></h2>
+        <p class="section-subtitle">Technologies I'm exploring and goals I'm working toward.</p>
+      </div>
+
+      <div class="journey-grid" id="journey-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ============================
+       CONTACT SECTION
+       ============================ -->
+  <section class="section section--light" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-badge"><i class="fa-solid fa-paper-plane"></i> Contact</span>
+        <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
+        <p class="section-subtitle">Have a question, want to collaborate, or just say hello? I'd love to hear from you.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info reveal">
+          <h3>Get in Touch</h3>
+          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of something impactful. Feel free to reach out!</p>
+
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-method-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-method-text">
+                <span>Email</span>
+                <a href="mailto:udayraje.1981@gmail.com" id="contact-email">udayraje.1981@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-method" id="contact-phone-wrapper">
+              <div class="contact-method-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="contact-method-text">
+                <span>Phone</span>
+                <p id="contact-phone">+91 XXXXX XXXXX</p>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-method-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-method-text">
+                <span>Location</span>
+                <p id="contact-location">Your City, India</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="#" target="_blank" rel="noopener" class="social-link" id="contact-social-github" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="social-link" id="contact-social-linkedin" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="social-link" id="contact-social-twitter" aria-label="Twitter" style="display:none;">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-card reveal">
+          <h3>Send a Message</h3>
+          <form id="contact-form" novalidate>
+            <!-- Honeypot anti-spam field — hidden from humans -->
+            <div style="position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden;" aria-hidden="true">
+              <label for="form-hp">Leave this empty</label>
+              <input type="text" id="form-hp" name="honeypot" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+              <label for="form-name">Full Name</label>
+              <input type="text" id="form-name" name="from_name" class="form-control" placeholder="Enter your full name" required maxlength="100">
+              <p class="form-error">This field is required</p>
+            </div>
+
+            <div class="form-group">
+              <label for="form-email">Email Address</label>
+              <input type="email" id="form-email" name="from_email" class="form-control" placeholder="Enter your email address" required maxlength="150">
+              <p class="form-error">Please enter a valid email</p>
+            </div>
+
+            <div class="form-group">
+              <label for="form-subject">Subject</label>
+              <input type="text" id="form-subject" name="subject" class="form-control" placeholder="What would you like to discuss?" required maxlength="200">
+              <p class="form-error">This field is required</p>
+            </div>
+
+            <div class="form-group">
+              <label for="form-message">Message</label>
+              <textarea id="form-message" name="message" class="form-control" placeholder="Write your message here..." required maxlength="3000"></textarea>
+              <p class="form-error">This field is required</p>
+            </div>
+
+            <button type="submit" class="btn btn--primary form-submit" id="form-submit-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span class="btn-text">Send Message</span>
+            </button>
+
+            <div class="form-status" id="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       CALL TO ACTION BANNER
+       ============================ -->
+  <section class="cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-card reveal">
+        <div class="cta-banner-decor cta-decor--1"></div>
+        <div class="cta-banner-decor cta-decor--2"></div>
+        <div class="cta-banner-content">
+          <span class="cta-badge"><i class="fa-solid fa-sparkles"></i> Let's Collaborate</span>
+          <h2 class="cta-title">Ready to build something impactful together?</h2>
+          <p class="cta-subtitle">Feel free to explore my full project showcase, review my technical credentials, or view my resume directly.</p>
+          <div class="cta-actions">
+            <a href="#projects" class="btn btn--white">
+              <i class="fa-solid fa-rocket"></i> Explore My Projects
+            </a>
+            <a href="resume.html" class="btn btn--outline-white">
+              <i class="fa-solid fa-file-pdf"></i> View Full Resume
+            </a>
+            <a href="#contact" class="btn btn--secondary-glass">
+              <i class="fa-solid fa-envelope"></i> Contact Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER
+       ============================ -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="footer-logo"><span class="footer-logo-icon">UK</span> Uday Kumbhar</span>
+          <p class="footer-tagline">Final-Year B.Tech CSE Student & Software Developer • Bhaskar Engineering College</p>
+        </div>
+        <div class="footer-nav">
+          <a href="#home" class="footer-link">Home</a>
+          <a href="#about" class="footer-link">About</a>
+          <a href="#skills" class="footer-link">Skills</a>
+          <a href="#projects" class="footer-link">Projects</a>
+          <a href="#education" class="footer-link">Education</a>
+          <a href="#certifications" class="footer-link">Certifications</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-text">
+          © 2026 <span id="footer-name">Uday Kumbhar</span>. Built with
+          <span class="footer-heart">♥</span> and code.
+        </p>
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================
+       PROJECT DETAILS MODAL
+       ============================ -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-label="Project details">
+    <div class="modal">
+      <button class="modal-close" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-image">
+        <img src="" alt="">
+      </div>
+      <div class="modal-body">
+        <span class="modal-category"></span>
+        <h2 class="modal-title"></h2>
+        <p class="modal-description"></p>
+
+        <h4 class="modal-section-title">Key Features</h4>
+        <ul class="modal-features"></ul>
+
+        <h4 class="modal-section-title">Technologies Used</h4>
+        <div class="modal-tech-stack"></div>
+
+        <div class="modal-actions"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================
+       VIEW-ONLY CERTIFICATE VIEWER MODAL
+       ============================ -->
+  <div class="modal-overlay cert-viewer-overlay" id="cert-viewer-modal" role="dialog" aria-modal="true" aria-label="Certificate Viewer">
+    <div class="cert-viewer-dialog">
+      <!-- Fixed Header -->
+      <header class="cert-viewer-header">
+        <div class="cert-viewer-heading">
+          <div class="cert-viewer-badge"><i class="fa-solid fa-award"></i> Certificate</div>
+          <h2 class="cert-viewer-title" id="cert-viewer-title">Certificate Title</h2>
+          <p class="cert-viewer-meta" id="cert-viewer-meta">Issuing Organization • Date</p>
+        </div>
+
+        <div class="cert-viewer-actions">
+          <!-- Zoom Controls -->
+          <div class="cert-zoom-toolbar" id="cert-zoom-toolbar" role="toolbar" aria-label="Zoom controls">
+            <button class="cert-zoom-btn" id="cert-zoom-out-btn" type="button" title="Zoom Out" aria-label="Zoom out">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+            <span class="cert-zoom-indicator" id="cert-zoom-indicator" aria-live="polite">100%</span>
+            <button class="cert-zoom-btn" id="cert-zoom-in-btn" type="button" title="Zoom In" aria-label="Zoom in">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <button class="cert-zoom-btn cert-zoom-btn--reset" id="cert-zoom-reset-btn" type="button" title="Reset Zoom (100%)" aria-label="Reset zoom to 100%">
+              <i class="fa-solid fa-rotate-right"></i>
+            </button>
+          </div>
+
+          <!-- Close Button -->
+          <button class="cert-viewer-close-btn" id="cert-viewer-close-btn" type="button" title="Close Certificate (Esc)" aria-label="Close certificate viewer">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Viewer Body / Canvas -->
+      <div class="cert-viewer-canvas" id="cert-viewer-canvas">
+        <div class="cert-viewport" id="cert-viewport">
+          <div class="cert-pan-layer" id="cert-pan-layer">
+            <img src="" alt="" id="cert-viewer-image" class="cert-viewer-image" draggable="false">
+          </div>
+        </div>
+        <!-- Embedded PDF Container -->
+        <div class="cert-pdf-container" id="cert-pdf-container" style="display: none;">
+          <object id="cert-viewer-pdf-obj" data="" type="application/pdf" class="cert-pdf-frame">
+            <iframe id="cert-viewer-pdf-iframe" src="" class="cert-pdf-frame" title="Certificate PDF"></iframe>
+          </object>
+        </div>
+      </div>
+
+      <!-- View Controls Footer -->
+      <footer class="cert-viewer-footer">
+        <div class="cert-footer-hint">
+          <i class="fa-solid fa-hand-pointer"></i>
+          <span>Drag to pan when zoomed in • Double-click or pinch to zoom • Esc to close</span>
+        </div>
+        <button class="cert-view-mode-toggle" id="cert-view-mode-toggle" type="button">
+          <i class="fa-solid fa-file-pdf"></i> <span id="cert-mode-text">View Original PDF</span>
+        </button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ============================
+       BACK TO TOP
+       ============================ -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- ============================
+       SUCCESS POPUP MODAL
+       ============================ -->
+  <div class="success-popup-overlay" id="success-popup" role="dialog" aria-modal="true" aria-label="Message sent successfully">
+    <div class="success-popup">
+      <button class="success-popup-close" id="success-popup-close" aria-label="Close popup">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Animated Checkmark -->
+      <div class="success-icon-wrap">
+        <svg class="success-checkmark" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <circle class="checkmark-circle" cx="40" cy="40" r="36" fill="none" stroke-width="3"/>
+          <path class="checkmark-tick" d="M24 42 L35 53 L56 28" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <span class="success-label">MESSAGE DELIVERED</span>
+      <h2 class="success-heading">Thank You!</h2>
+      <h3 class="success-subheading">Your message has been sent successfully.</h3>
+      <p class="success-description">I appreciate you taking the time to reach out. I'll review your message and get back to you as soon as possible.</p>
+      <p class="success-footer-text">Looking forward to connecting with you!</p>
+
+      <button class="btn btn--primary success-popup-btn" id="success-popup-back">
+        <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================
+       ERROR POPUP MODAL
+       ============================ -->
+  <div class="error-popup-overlay" id="error-popup" role="dialog" aria-modal="true" aria-label="Message sending failed">
+    <div class="error-popup">
+      <button class="error-popup-close" id="error-popup-close" aria-label="Close popup">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Animated Warning/Error Icon -->
+      <div class="error-icon-wrap">
+        <div class="error-icon-glow"></div>
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+
+      <span class="error-label">DELIVERY NOTICE</span>
+      <h2 class="error-heading">Message Not Sent</h2>
+      <p class="error-description">Something went wrong while sending your message. Please try again in a moment.</p>
+
+      <button class="btn btn--primary error-popup-btn" id="error-popup-retry">
+        <i class="fa-solid fa-rotate-right"></i> Try Again
+      </button>
+    </div>
+  </div>
+
+  <!-- EmailJS SDK & Configuration (loaded before main script) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/email-config.js"></script>
+
+  <!-- Main Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>
