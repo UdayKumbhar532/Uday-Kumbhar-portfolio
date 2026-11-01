@@ -53,6 +53,39 @@
       if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
     })();
   </script>
+  <!-- Structured Data: WebPage Schema (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://uday-kumbhar-portfolio.vercel.app/resume.html#webpage",
+        "url": "https://uday-kumbhar-portfolio.vercel.app/resume.html",
+        "name": "Uday Kumbhar Resume | Software Developer",
+        "description": "View Uday Kumbhar's resume, educational qualifications, technical skills, certifications, projects, and software development experience.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://uday-kumbhar-portfolio.vercel.app/#website",
+          "url": "https://uday-kumbhar-portfolio.vercel.app/",
+          "name": "Uday Kumbhar Portfolio"
+        },
+        "about": {
+          "@type": "Person",
+          "@id": "https://uday-kumbhar-portfolio.vercel.app/#person",
+          "name": "Uday Kumbhar",
+          "url": "https://uday-kumbhar-portfolio.vercel.app/",
+          "jobTitle": "AI-Augmented Software Developer",
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Bhaskar Engineering College, Hyderabad"
+          }
+        },
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="resume-page">
 
