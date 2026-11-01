@@ -1427,56 +1427,94 @@ function initContactForm() {
    SOCIAL MEDIA SHARING & INSTAGRAM FALLBACK
    ===================================================== */
 function initSocialSharing() {
-  const copyBtn = document.getElementById('share-copy-link-btn');
-  const toast = document.getElementById('share-toast');
-  if (!copyBtn) return;
-
   const shareData = {
     title: "Uday Kumbhar | AI-Augmented Software Developer",
     text: "Explore Uday Kumbhar's portfolio showcasing AI-powered applications, software development projects, and technical skills.",
     url: "https://uday-kumbhar-portfolio.vercel.app/"
   };
 
-  copyBtn.addEventListener('click', async () => {
-    // If Web Share API is available (Mobile/modern browsers supporting share)
-    if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
-      try {
-        await navigator.share(shareData);
-        return;
-      } catch (err) {
-        if (err.name !== 'AbortError') {
-          console.warn('Web Share failed, falling back to copy link:', err);
-        } else {
-          return; // user cancelled share sheet
+  const notification = document.getElementById('share-notification');
+  const notificationText = document.getElementById('share-notification-text');
+  const toastLegacy = document.getElementById('share-toast');
+  let notificationTimer = null;
+
+  function showNotification(msg) {
+    if (notification) {
+      if (notificationText) notificationText.textContent = msg;
+      notification.classList.add('show');
+      if (notificationTimer) clearTimeout(notificationTimer);
+      notificationTimer = setTimeout(() => {
+        notification.classList.remove('show');
+      }, 4000);
+    }
+    if (toastLegacy) {
+      toastLegacy.style.display = 'block';
+      setTimeout(() => {
+        toastLegacy.style.display = 'none';
+      }, 4000);
+    }
+  }
+
+  async function copyToClipboard(url, successMsg) {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        const tempInput = document.createElement('input');
+        tempInput.value = url;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+      }
+      showNotification(successMsg || 'Portfolio link copied to clipboard!');
+    } catch (err) {
+      console.warn('Clipboard write failed:', err);
+      showNotification('Portfolio URL: ' + url);
+    }
+  }
+
+  // 1. Dedicated Section Copy Link Button
+  const copyBtn = document.getElementById('share-copy-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      copyToClipboard(shareData.url, 'Portfolio link copied to clipboard! Ready to paste & share.');
+    });
+  }
+
+  // 2. Dedicated Section Instagram Button (Web Share API with Instagram friendly fallback)
+  const instagramBtn = document.getElementById('share-instagram-btn');
+  if (instagramBtn) {
+    instagramBtn.addEventListener('click', async () => {
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        try {
+          await navigator.share(shareData);
+          return;
+        } catch (err) {
+          if (err.name === 'AbortError') return;
         }
       }
-    }
+      // Instagram doesn't support direct URL query params for feeds/stories:
+      // Copy URL and notify user to paste in Instagram Bio, Story Sticker or DM
+      copyToClipboard(shareData.url, 'Portfolio link copied! Ready to paste in your Instagram Bio, Story sticker, or DM.');
+    });
+  }
 
-    // Fallback: Copy link to clipboard for Instagram Bio / Story sticker / DM
-    try {
-      await navigator.clipboard.writeText(shareData.url);
-      if (toast) {
-        toast.style.display = 'block';
-        setTimeout(() => {
-          toast.style.display = 'none';
-        }, 4500);
+  // 3. Compact Strip Instagram/Copy button in contact card
+  const copyBtnLegacy = document.getElementById('share-copy-link-btn');
+  if (copyBtnLegacy) {
+    copyBtnLegacy.addEventListener('click', async () => {
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        try {
+          await navigator.share(shareData);
+          return;
+        } catch (err) {
+          if (err.name === 'AbortError') return;
+        }
       }
-    } catch (err) {
-      // Fallback for older browsers
-      const tempInput = document.createElement('input');
-      tempInput.value = shareData.url;
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      document.execCommand('copy');
-      document.body.removeChild(tempInput);
-      if (toast) {
-        toast.style.display = 'block';
-        setTimeout(() => {
-          toast.style.display = 'none';
-        }, 4500);
-      }
-    }
-  });
+      copyToClipboard(shareData.url, 'Portfolio link copied! Ready to paste into Instagram Bio, Story sticker, or DM.');
+    });
+  }
 }
 
 /* =====================================================
