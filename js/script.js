@@ -346,6 +346,7 @@ function initializePortfolio() {
   safeInit(initProjectFilters, 'ProjectFilters');
   safeInit(initSkillFilters, 'SkillFilters');
   safeInit(initContactForm, 'ContactForm');
+  safeInit(initSocialSharing, 'SocialSharing');
   safeInit(initModals, 'Modals');
   safeInit(initCertViewer, 'CertViewer');
   safeInit(initBackToTop, 'BackToTop');
@@ -1421,6 +1422,62 @@ function initContactForm() {
 }
 
 
+
+/* =====================================================
+   SOCIAL MEDIA SHARING & INSTAGRAM FALLBACK
+   ===================================================== */
+function initSocialSharing() {
+  const copyBtn = document.getElementById('share-copy-link-btn');
+  const toast = document.getElementById('share-toast');
+  if (!copyBtn) return;
+
+  const shareData = {
+    title: "Uday Kumbhar | AI-Augmented Software Developer",
+    text: "Explore Uday Kumbhar's portfolio showcasing AI-powered applications, software development projects, and technical skills.",
+    url: "https://uday-kumbhar-portfolio.vercel.app/"
+  };
+
+  copyBtn.addEventListener('click', async () => {
+    // If Web Share API is available (Mobile/modern browsers supporting share)
+    if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          console.warn('Web Share failed, falling back to copy link:', err);
+        } else {
+          return; // user cancelled share sheet
+        }
+      }
+    }
+
+    // Fallback: Copy link to clipboard for Instagram Bio / Story sticker / DM
+    try {
+      await navigator.clipboard.writeText(shareData.url);
+      if (toast) {
+        toast.style.display = 'block';
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 4500);
+      }
+    } catch (err) {
+      // Fallback for older browsers
+      const tempInput = document.createElement('input');
+      tempInput.value = shareData.url;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      if (toast) {
+        toast.style.display = 'block';
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 4500);
+      }
+    }
+  });
+}
 
 /* =====================================================
    RESUME DOWNLOAD
